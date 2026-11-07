@@ -395,7 +395,6 @@ body {
 
 .royal-3d-perspective-box {
   width: 100%;
-  perspective: 1400px;
 }
 
 .royal-gatefold-envelope {
@@ -410,7 +409,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  transform-style: preserve-3d;
+  perspective: 1400px;
+  cursor: pointer;
 }
 
 .royal-inner-light-aura {
@@ -431,8 +431,8 @@ body {
 .gazette-frontpage-preview-card {
   position: relative;
   z-index: 2;
-  width: 88%;
-  height: 86%;
+  width: 86%;
+  height: 82%;
   background: #fffdfb;
   border-radius: 16px;
   border: 1px solid var(--rosegold-400);
@@ -440,6 +440,11 @@ body {
   padding: 12px;
   display: flex;
   flex-direction: column;
+  pointer-events: none;
+}
+
+.royal-gatefold-envelope.stage-3 .gazette-frontpage-preview-card {
+  z-index: 15;
 }
 
 .gazette-preview-frame {
@@ -598,7 +603,7 @@ body {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 50.5%;
+  width: 50.2%;
   z-index: 4;
   padding: 14px;
   background: linear-gradient(
@@ -609,7 +614,7 @@ body {
   );
   box-shadow: 0 12px 32px rgba(59, 22, 34, 0.16);
   backface-visibility: visible;
-  transform-style: preserve-3d;
+  pointer-events: none;
 }
 
 .royal-gatefold-wing.wing-left {
@@ -766,7 +771,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  z-index: 8;
+  z-index: 25;
   pointer-events: none;
 }
 
@@ -785,10 +790,9 @@ body {
 /* Center 3D Rose-Gold & Blush Wax Seal Button */
 .royal-wax-seal-btn {
   position: absolute;
-  z-index: 7;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  z-index: 30;
+  inset: 0;
+  margin: auto;
   width: 108px;
   height: 108px;
   border-radius: 50%;
@@ -806,6 +810,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  pointer-events: auto;
 }
 
 .wax-seal-metallic-rim {

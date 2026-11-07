@@ -410,6 +410,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   backface-visibility: hidden;
+  pointer-events: none;
 }
 
 .triptych-wing-left {
@@ -493,10 +494,9 @@ body {
 /* Central Burgundy & Gold Wax Seal */
 .cathedral-wax-seal {
   position: absolute;
-  z-index: 6;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  z-index: 20;
+  inset: 0;
+  margin: auto;
   width: 104px;
   height: 104px;
   border-radius: 50%;
@@ -513,6 +513,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  pointer-events: auto;
 }
 
 .wax-seal-bevel {

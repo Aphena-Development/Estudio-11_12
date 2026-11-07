@@ -86,7 +86,10 @@ export default function EnvelopeIntro({ onOpen, quinceanera }) {
 
           {/* 3D PERSPECTIVE ROYAL GATEFOLD & SILK ENVELOPE */}
           <div className="royal-3d-perspective-box">
-            <div className={`royal-gatefold-envelope stage-${stage}`}>
+            <div
+              className={`royal-gatefold-envelope stage-${stage}`}
+              onClick={handleSealClick}
+            >
               {/* Warm Rose-Gold Inner Palace Glow revealed when wings open */}
               <div className="royal-inner-light-aura" aria-hidden="true" />
 
@@ -95,10 +98,10 @@ export default function EnvelopeIntro({ onOpen, quinceanera }) {
                 className="gazette-frontpage-preview-card"
                 animate={
                   stage >= 3
-                    ? { y: -28, scale: 1.08, opacity: 1, rotateX: 0 }
+                    ? { y: -32, scale: 1.06, opacity: 1 }
                     : stage >= 2
-                    ? { y: -10, scale: 1.02, opacity: 1, rotateX: 0 }
-                    : { y: 8, scale: 0.94, opacity: 0.92, rotateX: 2 }
+                    ? { y: -8, scale: 1, opacity: 1 }
+                    : { y: 0, scale: 0.9, opacity: 0.4 }
                 }
                 transition={{
                   duration: stage >= 3 ? 0.78 : 0.65,
@@ -339,15 +342,22 @@ export default function EnvelopeIntro({ onOpen, quinceanera }) {
               {/* CENTER 3D ROSE-GOLD & BLUSH WAX SEAL BUTTON [ X • XV ] */}
               <motion.button
                 type="button"
-                onClick={handleSealClick}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleSealClick();
+                }}
                 className="royal-wax-seal-btn"
-                whileHover={{ scale: 1.06 }}
+                whileHover={{ scale: 1.07 }}
                 whileTap={{ scale: 0.94 }}
                 animate={
                   stage >= 1
-                    ? { scale: [1, 1.18, 0], rotate: [0, -18, 55], opacity: [1, 0.9, 0] }
+                    ? {
+                        scale: [1, 1.18, 0],
+                        rotate: [0, -18, 55],
+                        opacity: [1, 0.9, 0],
+                      }
                     : {
-                        scale: [1, 1.045, 1],
+                        scale: [1, 1.05, 1],
                         boxShadow: [
                           "0 14px 36px rgba(94, 37, 56, 0.42), 0 0 0 5px rgba(216, 164, 127, 0.32)",
                           "0 18px 48px rgba(94, 37, 56, 0.58), 0 0 0 9px rgba(232, 197, 158, 0.52)",

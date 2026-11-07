@@ -1,0 +1,13 @@
+node_modules
+.next
+.vite
+dist
+.zones-cache
+main/node_modules
+main/.next
+main/public/i
+zonas/*/node_modules
+zonas/*/dist
+plantillas/*/node_modules
+plantillas/*/dist
+.env*

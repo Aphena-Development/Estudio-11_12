@@ -191,8 +191,8 @@ export default function EnvelopeIntro({ onOpen, quinceanera }) {
                   </strong>
                 </div>
                 <div className="vip-stub-cell">
-                  <span className="stub-label">DRESS CODE</span>
-                  <strong className="stub-value">GALA NOCTURNA</strong>
+                  <span className="stub-label">EDICIÓN</span>
+                  <strong className="stub-value">GALA XV</strong>
                 </div>
                 <div className="vip-stub-cell">
                   <span className="stub-label">ACCESO</span>

@@ -189,38 +189,6 @@ export default function App() {
         />
       )}
 
-      {/* Barra Editorial Superior estilo Vogue Night Gala */}
-      <header className="vogue-masthead-nav">
-        <div className="masthead-inner">
-          <a href="#hero" className="masthead-monogram">
-            <span>[ {monogramLetter} • XV ]</span>
-          </a>
-
-          <nav className="masthead-links" aria-label="Secciones de la gala">
-            <a href="#hero">Portada</a>
-            <a href="#itinerary">Programa</a>
-            <a href="#locations">Pases VIP</a>
-            <a href="#gallery">Editorial</a>
-            <a href="#rsvp">RSVP</a>
-          </nav>
-
-          <button
-            type="button"
-            onClick={toggleAudio}
-            className={`masthead-audio-pill ${isPlaying ? "playing" : ""}`}
-            aria-label={isPlaying ? "Pausar música" : "Reproducir música"}
-          >
-            <div className="mini-eq">
-              <span />
-              <span />
-              <span />
-              <span />
-            </div>
-            <span>{isPlaying ? "ON AIR" : "MÚSICA"}</span>
-          </button>
-        </div>
-      </header>
-
       {/* Botón Flotante de Música (Esquina Inferior Derecha) */}
       <motion.button
         type="button"
@@ -655,11 +623,11 @@ export default function App() {
           </div>
         </section>
 
-        {/* ================= 6. VIP DRESS CODE & GOLD ENVELOPE GIFTS + SMART WHATSAPP RSVP ================= */}
+        {/* ================= 6. GOLD ENVELOPE GIFTS + SMART WHATSAPP RSVP ================= */}
         <section id="rsvp" className="vip-lounge-section">
           <div className="gala-container">
             <div className="vip-lounge-grid">
-              {/* Left Column: Dress Code + Gold Envelope Gifts */}
+              {/* Left Column: Gold Envelope Gifts */}
               <motion.div
                 id="gifts"
                 className="vip-dresscode-gifts-card"
@@ -668,25 +636,6 @@ export default function App() {
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.75 }}
               >
-                {/* VIP Dress Code Block */}
-                <div className="dresscode-editorial-box">
-                  <span className="gala-eyebrow">CÓDIGO DE VESTIMENTA</span>
-                  <h3 className="dresscode-title">Etiqueta Formal de Noche</h3>
-                  <p className="dresscode-note">
-                    {gifts.note || "Código de vestimenta: Formal de noche."}
-                  </p>
-                  <div className="dresscode-pills">
-                    <span className="dress-pill">
-                      <Star size={12} /> Damas: Vestido Largo de Gala
-                    </span>
-                    <span className="dress-pill">
-                      <Star size={12} /> Caballeros: Traje Formal / Smoking
-                    </span>
-                  </div>
-                </div>
-
-                <div className="gold-hairline-divider" />
-
                 {/* Gold Foil Envelope Gifts Block */}
                 <div className="gifts-editorial-box">
                   <div className="gifts-crest-icon">

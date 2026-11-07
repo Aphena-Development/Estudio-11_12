@@ -248,25 +248,6 @@ export default function App() {
         />
       )}
 
-      {/* Cabecera Editorial Fina (Masthead) */}
-      <header className="editorial-top-masthead">
-        <div className="masthead-inner">
-          <a href="#hero" className="masthead-monogram">
-            V <span>&amp;</span> S
-          </a>
-          <div className="masthead-center-tag">
-            NUESTRA BODA • {quinceanera.dateDisplay} • ATLIXCO, PUEBLA
-          </div>
-          <nav className="masthead-nav" aria-label="Secciones de la boda">
-            <a href="#countdown">Fecha</a>
-            <a href="#locations">Hacienda</a>
-            <a href="#itinerary">Programa</a>
-            <a href="#gallery">Editorial</a>
-            <a href="#rsvp">Confirmar</a>
-          </nav>
-        </div>
-      </header>
-
       {/* Botón Flotante de Música (Salvia & Latón) */}
       <motion.button
         type="button"
@@ -660,89 +641,25 @@ export default function App() {
           </div>
         </section>
 
-        {/* ================= 6. HACIENDA DRESS CODE & HONEYMOON GIFT BOX ================= */}
+        {/* ================= 6. HONEYMOON GIFT BOX (MESA DE REGALOS) ================= */}
         <section id="gifts" className="protocol-gifts-section">
           <div className="hacienda-container">
             <div className="editorial-section-heading">
               <span className="editorial-index">
-                04 / PROTOCOLO DE JARDÍN &amp; OBSEQUIOS
+                04 / OBSEQUIOS &amp; LUNA DE MIEL
               </span>
               <h2 className="editorial-serif-title">
-                Código de Vestimenta &amp; Regalos
+                Mesa de Regalos &amp; Lluvia de Sobres
               </h2>
               <BotanicalDivider />
             </div>
 
-            <div className="protocol-two-col-grid">
-              {/* Tarjeta Izquierda: Código de Vestimenta de Hacienda */}
-              <motion.div
-                className="hacienda-dresscode-card"
-                initial={{ opacity: 0, x: -24 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
-              >
-                <span className="card-kicker">DRESS CODE • HACIENDA</span>
-                <h3 className="card-serif-heading">Formal de Jardín</h3>
-                <p className="dresscode-lead">{gifts.note}</p>
-
-                <div className="dresscode-palette-wrap">
-                  <span className="palette-label">
-                    TONOS SUGERIDOS PARA INVITADOS
-                  </span>
-                  <div className="palette-swatches">
-                    <div className="swatch-item">
-                      <span
-                        className="swatch-circle"
-                        style={{ background: "#5E7050" }}
-                      />
-                      <small>Olivo</small>
-                    </div>
-                    <div className="swatch-item">
-                      <span
-                        className="swatch-circle"
-                        style={{ background: "#B8965A" }}
-                      />
-                      <small>Champaña</small>
-                    </div>
-                    <div className="swatch-item">
-                      <span
-                        className="swatch-circle"
-                        style={{ background: "#A96E5B" }}
-                      />
-                      <small>Terracota</small>
-                    </div>
-                    <div className="swatch-item">
-                      <span
-                        className="swatch-circle"
-                        style={{ background: "#3B4338" }}
-                      />
-                      <small>Bosque</small>
-                    </div>
-                    <div className="swatch-item">
-                      <span
-                        className="swatch-circle"
-                        style={{ background: "#2C3545" }}
-                      />
-                      <small>Azul Noche</small>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="dresscode-bridal-reserve">
-                  <Sparkles size={16} />
-                  <span>
-                    Damas: Blanco, marfil, alabastro y hueso reservados
-                    exclusivamente para la novia.
-                  </span>
-                </div>
-              </motion.div>
-
-              {/* Tarjeta Derecha: Cofre / Sobre de Luna de Miel */}
+            <div className="protocol-single-col-wrap">
+              {/* Tarjeta de Cofre / Sobre de Luna de Miel */}
               <motion.div
                 className="honeymoon-giftbox-card"
-                initial={{ opacity: 0, x: 24 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7 }}
               >

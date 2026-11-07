@@ -1639,6 +1639,11 @@ body {
   padding: 52px 0 64px;
 }
 
+.protocol-single-col-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
 .protocol-two-col-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

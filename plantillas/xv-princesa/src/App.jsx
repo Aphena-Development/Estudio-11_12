@@ -36,14 +36,6 @@ import EnvelopeIntro from "./components/EnvelopeIntro";
 
 const ROMAN_NUMERALS = ["I", "II", "III", "IV"];
 
-const GUEST_DRESS_SWATCHES = [
-  { name: "Borgoña Imperial", hex: "#5e2538" },
-  { name: "Champagne Dorado", hex: "#d8a47f" },
-  { name: "Azul Medianoche", hex: "#1f2a44" },
-  { name: "Esmeralda Real", hex: "#1f4e3d" },
-  { name: "Bronce Antiguo", hex: "#6b4c3e" },
-];
-
 function getCountdownParts(targetISO) {
   const now = new Date().getTime();
   const target = new Date(targetISO).getTime();
@@ -220,49 +212,26 @@ export default function App() {
         />
       )}
 
-      {/* ================= STICKY EDITORIAL MASTHEAD BAR ================= */}
-      <header className="royal-masthead-nav">
-        <div className="royal-masthead-inner">
-          <a href="#hero" className="royal-masthead-monogram">
-            <Crown size={14} className="masthead-crown-icon" />
-            <span>[ {monogramLetter} • XV ]</span>
-          </a>
-
-          <div className="royal-masthead-issue-pill">
-            <span>THE QUINCEAÑERA POST • VOL. XV</span>
-          </div>
-
-          <nav
-            className="royal-masthead-links"
-            aria-label="Secciones de la invitación"
-          >
-            <a href="#hero">Portada</a>
-            <a href="#honor">Corte de Honor</a>
-            <a href="#locations">Sedes</a>
-            <a href="#itinerary">Programa</a>
-            <a href="#gallery">Editorial</a>
-            <a href="#rsvp">Confirmar</a>
-          </nav>
-
-          <button
-            type="button"
-            onClick={toggleAudio}
-            className={`royal-masthead-audio-btn ${isPlaying ? "playing" : ""}`}
-            aria-label={isPlaying ? "Pausar canción" : "Reproducir canción"}
-          >
-            <div className="masthead-eq-bars" aria-hidden="true">
-              <span />
-              <span />
-              <span />
-              <span />
-            </div>
-            {isPlaying ? <Pause size={14} /> : <Play size={14} />}
-            <span className="masthead-audio-label">
-              {isPlaying ? "ON AIR" : "MÚSICA"}
-            </span>
-          </button>
+      {/* Botón Flotante Discreto de Música */}
+      <motion.button
+        type="button"
+        onClick={toggleAudio}
+        className={`royal-floating-music-fab ${isPlaying ? "playing" : ""}`}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.94 }}
+        aria-label={isPlaying ? "Pausar canción" : "Reproducir canción"}
+      >
+        <div className="masthead-eq-bars" aria-hidden="true">
+          <span />
+          <span />
+          <span />
+          <span />
         </div>
-      </header>
+        {isPlaying ? <Pause size={15} /> : <Play size={15} />}
+        <span className="masthead-audio-label">
+          {isPlaying ? "Música Activa" : "Escuchar Canción"}
+        </span>
+      </motion.button>
 
       {/* CONTENIDO PRINCIPAL DE LA INVITACIÓN */}
       <main className="royal-invitation-main">
@@ -813,15 +782,15 @@ export default function App() {
           </div>
         </section>
 
-        {/* ================= 6. PROTOCOLO REAL (VESTIMENTA + LLUVIA DE SOBRES) & RSVP ================= */}
+        {/* ================= 6. LLUVIA DE SOBRES & CONFIRMACIÓN RSVP ================= */}
         <section id="rsvp" className="royal-salon-rsvp-section">
           <div className="royal-container">
             <div className="royal-section-header">
               <span className="royal-section-eyebrow">
-                PROTOCOLO DE PALACIO &amp; PASE DE LISTA
+                DETALLE ESPECIAL &amp; PASE DE LISTA
               </span>
               <h2 className="royal-section-script-title">
-                Etiqueta, Regalos y Confirmación
+                Regalos y Confirmación
               </h2>
               <p className="royal-section-subtitle">
                 Tu presencia es el mayor honor en esta celebración real
@@ -829,59 +798,8 @@ export default function App() {
             </div>
 
             <div className="royal-salon-two-col-grid">
-              {/* LEFT COLUMN: Dress Code + Interactive 3D Lluvia de Sobres */}
+              {/* LEFT COLUMN: Interactive 3D Lluvia de Sobres */}
               <div className="royal-protocol-left-stack">
-                {/* Dress Code Card */}
-                <motion.div
-                  className="royal-dresscode-card"
-                  initial={{ opacity: 0, y: 28 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.7 }}
-                >
-                  <div className="protocol-card-kicker">
-                    <Crown size={15} />
-                    <span>CÓDIGO DE VESTIMENTA • ETIQUETA REAL</span>
-                  </div>
-
-                  <h3 className="protocol-card-title">Formal / Gala</h3>
-                  <p className="protocol-card-desc">
-                    Te invitamos a lucir elegante para una velada mágica.
-                    Sugerimos los siguientes tonos de gala para nuestros
-                    invitados:
-                  </p>
-
-                  {/* Suggested Guest Color Swatches */}
-                  <div className="dresscode-swatches-row">
-                    {GUEST_DRESS_SWATCHES.map((swatch) => (
-                      <div key={swatch.name} className="dresscode-swatch-item">
-                        <span
-                          className="swatch-circle"
-                          style={{ backgroundColor: swatch.hex }}
-                        />
-                        <span className="swatch-label">{swatch.name}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Reserved Color Notice for Quinceañera */}
-                  <div className="reserved-blush-notice">
-                    <div className="reserved-swatch-badge">
-                      <Crown size={14} />
-                    </div>
-                    <div className="reserved-notice-copy">
-                      <strong>
-                        Color Reservado para {quinceanera.name}: Rosa Princesa /
-                        Blush
-                      </strong>
-                      <span>
-                        Agradecemos reservar todas las tonalidades de rosa claro
-                        y blush exclusivamente para la Quinceañera.
-                      </span>
-                    </div>
-                  </div>
-                </motion.div>
-
                 {/* Interactive 3D Rose-Gold Envelope for Lluvia de Sobres */}
                 <motion.div
                   id="gifts"

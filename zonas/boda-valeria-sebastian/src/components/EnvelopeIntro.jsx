@@ -10,7 +10,7 @@ export default function EnvelopeIntro({ onOpen, quinceanera }) {
     setIsOpening(true);
     setTimeout(() => {
       onOpen();
-    }, 1150);
+    }, 1650);
   };
 
   return (
@@ -55,14 +55,25 @@ export default function EnvelopeIntro({ onOpen, quinceanera }) {
               className="inner-cotton-card"
               animate={
                 isOpening
-                  ? { scale: 1.03, opacity: 1, y: -6 }
-                  : { scale: 0.95, opacity: 0.88, y: 0 }
+                  ? { scale: 1.06, opacity: 1, y: -10 }
+                  : { scale: 0.92, opacity: 0.85, y: 8 }
               }
-              transition={{ duration: 0.95, ease: [0.16, 1, 0.3, 1] }}
+              transition={{
+                duration: 1.15,
+                delay: isOpening ? 0.22 : 0,
+                ease: [0.16, 1, 0.3, 1],
+              }}
             >
               <span className="inner-card-eyebrow">
                 CELEBRACIÓN NUPCIAL • {quinceanera.dateDisplay}
               </span>
+              <div className="inner-card-arch-preview">
+                <img
+                  src={quinceanera.heroImage}
+                  alt={quinceanera.name}
+                  className="inner-card-arch-img"
+                />
+              </div>
               <div className="inner-card-monogram">V &amp; S</div>
               <h2 className="inner-card-couple">{quinceanera.name}</h2>
               <p className="inner-card-date">{quinceanera.dateFullText}</p>

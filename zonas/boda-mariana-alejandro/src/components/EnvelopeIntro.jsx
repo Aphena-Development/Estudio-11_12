@@ -10,7 +10,7 @@ export default function EnvelopeIntro({ onOpen, quinceanera }) {
     setIsOpening(true);
     setTimeout(() => {
       onOpen();
-    }, 1150);
+    }, 1650);
   };
 
   return (
@@ -44,14 +44,24 @@ export default function EnvelopeIntro({ onOpen, quinceanera }) {
               className="triptych-inner-sanctuary"
               animate={
                 isOpening
-                  ? { scale: 1.03, opacity: 1 }
-                  : { scale: 0.97, opacity: 0.92 }
+                  ? { scale: 1.05, opacity: 1, y: -6 }
+                  : { scale: 0.94, opacity: 0.88, y: 6 }
               }
-              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+              transition={{
+                duration: 1.15,
+                delay: isOpening ? 0.2 : 0,
+                ease: [0.16, 1, 0.3, 1],
+              }}
             >
               <div className="sanctuary-double-frame">
                 <span className="sanctuary-latin">AD MAIOREM DEI GLORIAM</span>
-                <div className="sanctuary-cross-emblem">✝</div>
+                <div className="sanctuary-arch-preview">
+                  <img
+                    src={quinceanera.heroImage}
+                    alt={quinceanera.name}
+                    className="sanctuary-arch-img"
+                  />
+                </div>
                 <p className="sanctuary-kicker">Sagrado Matrimonio</p>
                 <h1 className="sanctuary-couple-names">{quinceanera.name}</h1>
                 <div className="sanctuary-rule" />

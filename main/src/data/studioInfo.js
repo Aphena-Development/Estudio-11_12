@@ -1,3 +1,5 @@
+import { invitationAsset } from "../lib/assets";
+
 export const STUDIO_INFO = {
   name: "11.12 Estudio",
   tagline: "Fotografía Editorial & Invitaciones Digitales en Atlixco",
@@ -20,7 +22,7 @@ export const STUDIO_INFO = {
   editorialShots: [
     {
       id: "sesion-ximena",
-      src: "/i/xv-ximena/assets/ximena-3.jpg",
+      src: invitationAsset("xv-ximena", "ximena-3.jpg"),
       alt: "Retrato editorial de quinceañera en jardín por 11.12 Estudio",
       title: "Ximena • Edición Princesa",
       category: "Sesión XV Años",
@@ -29,26 +31,26 @@ export const STUDIO_INFO = {
       invitationUrl: "/i/xv-ximena",
       gallery: [
         {
-          src: "/i/xv-ximena/assets/ximena-3.jpg",
+          src: invitationAsset("xv-ximena", "ximena-3.jpg"),
           caption: "Portada Editorial Save The Date — Luz dorada de tarde",
         },
         {
-          src: "/i/xv-ximena/assets/ximena-1.jpg",
+          src: invitationAsset("xv-ximena", "ximena-1.jpg"),
           caption: "Retrato de cuerpo completo en locación exterior",
         },
         {
-          src: "/i/xv-ximena/assets/ximena-2.jpg",
+          src: invitationAsset("xv-ximena", "ximena-2.jpg"),
           caption: "Composición en jardín con iluminación natural",
         },
         {
-          src: "/i/xv-ximena/assets/ximena-4.jpg",
+          src: invitationAsset("xv-ximena", "ximena-4.jpg"),
           caption: "Retrato de cierre para galería de invitación digital",
         },
       ],
     },
     {
       id: "sesion-camila",
-      src: "/i/xv-camila/assets/camila-1.jpg",
+      src: invitationAsset("xv-camila", "camila-1.jpg"),
       alt: "Retrato de gala nocturna de quinceañera en terraza colonial de Atlixco",
       title: "Camila • Gala de Medianoche",
       category: "Sesión XV Gala",
@@ -57,26 +59,26 @@ export const STUDIO_INFO = {
       invitationUrl: "/i/xv-camila",
       gallery: [
         {
-          src: "/i/xv-camila/assets/camila-1.jpg",
+          src: invitationAsset("xv-camila", "camila-1.jpg"),
           caption: "Terraza colonial al anochecer con iluminación cálida",
         },
         {
-          src: "/i/xv-camila/assets/camila-2.jpg",
+          src: invitationAsset("xv-camila", "camila-2.jpg"),
           caption: "Escalinata principal entre velas y flores champán",
         },
         {
-          src: "/i/xv-camila/assets/camila-3.jpg",
+          src: invitationAsset("xv-camila", "camila-3.jpg"),
           caption: "Retrato en primer plano con contraluz dorado",
         },
         {
-          src: "/i/xv-camila/assets/camila-4.jpg",
+          src: invitationAsset("xv-camila", "camila-4.jpg"),
           caption: "Salón de candiles de cristal • Alta costura",
         },
       ],
     },
     {
       id: "sesion-valeria-sebastian",
-      src: "/i/boda-valeria-sebastian/assets/valeria-1.jpg",
+      src: invitationAsset("boda-valeria-sebastian", "valeria-1.jpg"),
       alt: "Fotografía de boda en hacienda de Atlixco al atardecer",
       title: "Valeria & Sebastián • Hacienda",
       category: "Sesión Pre-Boda & Civil",
@@ -85,26 +87,26 @@ export const STUDIO_INFO = {
       invitationUrl: "/i/boda-valeria-sebastian",
       gallery: [
         {
-          src: "/i/boda-valeria-sebastian/assets/valeria-1.jpg",
+          src: invitationAsset("boda-valeria-sebastian", "valeria-1.jpg"),
           caption: "Arcos de cantera al atardecer en Hacienda Santo Cristo",
         },
         {
-          src: "/i/boda-valeria-sebastian/assets/valeria-2.jpg",
+          src: invitationAsset("boda-valeria-sebastian", "valeria-2.jpg"),
           caption: "Caminata entre olivos y jardines de la hacienda",
         },
         {
-          src: "/i/boda-valeria-sebastian/assets/valeria-3.jpg",
+          src: invitationAsset("boda-valeria-sebastian", "valeria-3.jpg"),
           caption: "Retrato íntimo con velo de encaje y luz cálida",
         },
         {
-          src: "/i/boda-valeria-sebastian/assets/valeria-4.jpg",
+          src: invitationAsset("boda-valeria-sebastian", "valeria-4.jpg"),
           caption: "Recepción nocturna bajo cielo de luces en terraza",
         },
       ],
     },
     {
       id: "sesion-mariana-alejandro",
-      src: "/i/boda-mariana-alejandro/assets/mariana-1.jpg",
+      src: invitationAsset("boda-mariana-alejandro", "mariana-1.jpg"),
       alt: "Retrato clásico de boda religiosa en templo histórico de Atlixco",
       title: "Mariana & Alejandro • Sacramental",
       category: "Cobertura Nupcial",
@@ -113,19 +115,19 @@ export const STUDIO_INFO = {
       invitationUrl: "/i/boda-mariana-alejandro",
       gallery: [
         {
-          src: "/i/boda-mariana-alejandro/assets/mariana-1.jpg",
+          src: invitationAsset("boda-mariana-alejandro", "mariana-1.jpg"),
           caption: "Portón tallado del Templo de La Merced en Atlixco",
         },
         {
-          src: "/i/boda-mariana-alejandro/assets/mariana-2.jpg",
+          src: invitationAsset("boda-mariana-alejandro", "mariana-2.jpg"),
           caption: "Solemne ceremonia nupcial frente al retablo dorado",
         },
         {
-          src: "/i/boda-mariana-alejandro/assets/mariana-3.jpg",
+          src: invitationAsset("boda-mariana-alejandro", "mariana-3.jpg"),
           caption: "Salida triunfal de los novios bajo lluvia de pétalos",
         },
         {
-          src: "/i/boda-mariana-alejandro/assets/mariana-4.jpg",
+          src: invitationAsset("boda-mariana-alejandro", "mariana-4.jpg"),
           caption: "Retrato de gala en el claustro colonial iluminado",
         },
       ],

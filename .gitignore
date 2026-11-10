@@ -1,13 +1,21 @@
-node_modules
-.next
-.vite
-dist
-.zones-cache
-main/node_modules
-main/.next
-main/public/i
-zonas/*/node_modules
-zonas/*/dist
-plantillas/*/node_modules
-plantillas/*/dist
-.env*
+# Dependencias en raíz o subproyectos
+node_modules/
+**/node_modules/
+
+# Compilaciones de Next.js
+.next/
+**/dist/
+**/out/
+
+# Activos pesados (165+ MB) servidos desde Garage S3 (se sincronizan con `npm run s3:sync`)
+main/public/i/
+main/src/generated/
+.build-cache/
+
+# Variables de entorno y archivos del sistema
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+*.log

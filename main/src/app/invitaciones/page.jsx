@@ -11,11 +11,12 @@ import {
   Calendar,
   MapPin,
   ArrowLeft,
-  Camera,
 } from "lucide-react";
-import invitationsData from "../../generated/invitations.json";
+import { getPortfolioInvitations } from "../../content/invitations";
 import { STUDIO_INFO } from "../../data/studioInfo";
 import { StudioScrollNav, StudioFooter } from "../../components/StudioChrome";
+
+const invitationsData = getPortfolioInvitations();
 
 export default function InvitacionesDirectoryPage() {
   const [searchQuery, setSearchQuery] = useState("");

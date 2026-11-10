@@ -1,0 +1,25 @@
+metadata_dir = "/var/lib/garage/meta"
+data_dir = "/var/lib/garage/data"
+db_engine = "lmdb"
+
+replication_factor = 1
+compression_level = 1
+
+rpc_bind_addr = "[::]:3901"
+rpc_public_addr = "127.0.0.1:3901"
+rpc_secret = "4792158d12a7e9c0f38a42b9d187e654a2b3c4d5e6f708192a3b4c5d6e7f8091"
+
+[s3_api]
+s3_region = "garage"
+api_bind_addr = "[::]:3900"
+root_domain = ".s3.sslip.io"
+
+[s3_web]
+bind_addr = "[::]:3902"
+root_domain = ".web.sslip.io"
+index = "index.html"
+
+[admin]
+api_bind_addr = "[::]:3903"
+admin_token = "estudio1112-garage-admin-token-cambiar"
+metrics_token = "estudio1112-garage-metrics-token"

@@ -1,16 +1,18 @@
 {
   "name": "estudio-11_12",
   "displayName": "Estudio-11_12",
-  "description": "Estudio-11_12 — Plataforma de Fotografía Editorial e Invitaciones Digitales (Multi-Zonas)",
-  "version": "1.0.0",
+  "description": "Estudio-11_12 — Plataforma de Fotografía Editorial e Invitaciones Digitales (Arquitectura Multi-Invitación)",
+  "version": "2.0.0",
   "private": true,
   "type": "module",
   "scripts": {
     "postinstall": "npm --prefix main install --no-audit --no-fund",
-    "build:zones": "node scripts/build-zones.mjs",
-    "dev": "node scripts/build-zones.mjs && npm --prefix main run dev",
-    "build": "node scripts/build-zones.mjs && npm --prefix main run build",
+    "dev": "npm --prefix main run dev",
+    "build": "npm --prefix main run build",
     "start": "npm --prefix main run start",
-    "nueva-zona": "node scripts/new-zone.mjs"
+    "nueva-zona": "node scripts/new-zone.mjs",
+    "nueva-invitacion": "node scripts/new-zone.mjs",
+    "s3:sync": "node scripts/s3-sync.mjs",
+    "s3:dry-run": "node scripts/s3-sync.mjs --dry-run"
   }
 }

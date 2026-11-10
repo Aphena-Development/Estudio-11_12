@@ -13,9 +13,11 @@ import {
   X,
   Expand,
 } from "lucide-react";
-import invitationsData from "../generated/invitations.json";
+import { getPortfolioInvitations } from "../content/invitations";
 import { STUDIO_INFO } from "../data/studioInfo";
 import { StudioScrollNav, StudioFooter } from "../components/StudioChrome";
+
+const invitationsData = getPortfolioInvitations();
 
 export default function StudioHomePage() {
   const featuredInvitation = invitationsData[0];
@@ -170,7 +172,8 @@ export default function StudioHomePage() {
               >
                 Producimos sesiones fotográficas con estética de revista y
                 diseñamos una invitación digital única para tu evento con música,
-                animaciones a medida y confirmación directa a tu WhatsApp.
+                apertura interactiva, mapas GPS y galería editorial de alta
+                resolución.
               </p>
 
               <div
@@ -233,7 +236,7 @@ export default function StudioHomePage() {
                   aria-label="Abrir galería de sesión de Ximena"
                 >
                   <img
-                    src="/i/xv-ximena/assets/ximena-3.jpg"
+                    src={STUDIO_INFO.editorialShots[0].src}
                     alt="Retrato editorial de quinceañera por 11.12 Estudio"
                     className="stage-img"
                   />
@@ -250,7 +253,7 @@ export default function StudioHomePage() {
                   aria-label="Abrir galería de sesión de Valeria y Sebastián"
                 >
                   <img
-                    src="/i/boda-valeria-sebastian/assets/valeria-1.jpg"
+                    src={STUDIO_INFO.editorialShots[2].src}
                     alt="Fotografía de boda en hacienda de Atlixco"
                   />
                 </button>
@@ -511,8 +514,8 @@ export default function StudioHomePage() {
                 <h3>Invitación Digital con Diseño Único</h3>
                 <p>
                   Construimos una experiencia web exclusiva con apertura
-                  interactiva, tu canción favorita, mapas GPS de misa y salón, y
-                  confirmación de asistencia por WhatsApp.
+                  interactiva, tu canción favorita, cuenta regresiva, mapas GPS
+                  de misa y salón, e itinerario editorial.
                 </p>
               </article>
 

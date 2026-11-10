@@ -1,0 +1,34 @@
+services:
+  garage:
+    image: dxflrs/garage:v2.1.0
+    restart: unless-stopped
+    volumes:
+      - ./garage.toml:/etc/garage.toml:ro
+      - garage-meta:/var/lib/garage/meta
+      - garage-data:/var/lib/garage/data
+    environment:
+      - RUST_LOG=garage=info
+    ports:
+      - "3900:3900" # S3 API
+      - "3901:3901" # RPC interno
+      - "3902:3902" # S3 Web Endpoint (entrega directa de imágenes y MP3)
+      - "3903:3903" # Admin API (consumida por garage-webui)
+
+  garage-webui:
+    image: khairul169/garage-webui:latest
+    restart: unless-stopped
+    depends_on:
+      - garage
+    volumes:
+      - ./garage.toml:/etc/garage.toml:ro
+    environment:
+      - API_BASE_URL=http://garage:3903
+      - S3_ENDPOINT_URL=http://garage:3900
+      - S3_REGION=garage
+      - AUTH_USER_PASS=${GARAGE_UI_AUTH:-admin:cambiar_password_seguro}
+    ports:
+      - "3909:3909"
+
+volumes:
+  garage-meta:
+  garage-data:
